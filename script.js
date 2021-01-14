@@ -1,7 +1,16 @@
-const tambahPenumpang = (namaPenumpang, penumpang) -> {
+const penumpang = [];
+const tambahPenumpang = (namaPenumpang, penumpang) => {
     // jika angkot kosong
-    //     tambah penumpang di awal array
-    //     kembalikan isi array & keluar dari function
+    if (penumpang.length === 0) {
+        //     tambah penumpang di awal array
+        penumpang[0] = namaPenumpang;
+
+        //     kembalikan isi array & keluar dari function
+        return penumpang;
+    }
+
+    console.log(penumpang);
+    
     // else
     //     telusuri seluruh kursi dari awal
     //         jika ada kursi kosong
@@ -15,3 +24,7 @@ const tambahPenumpang = (namaPenumpang, penumpang) -> {
     //             kembalikan isi array & keluar dari function
 
 }
+
+const greet = () => {
+    return "Hello, World";
+};
