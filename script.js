@@ -40,8 +40,16 @@ const cobaArray = [];
 cobaArray[0] = "Dida";
 cobaArray[1] = "Isna";
 cobaArray[2] = undefined;
-cobaArray[3] = "Fina";
+cobaArray[3] = undefined;
 console.log(cobaArray);
+
+for(let i = 0; i < cobaArray.length; i++) {
+    if(cobaArray[i] === undefined) {
+        console.log(i);
+        break;
+    }
+}
+
 
 const greet = () => {
     return "Hello, World";
