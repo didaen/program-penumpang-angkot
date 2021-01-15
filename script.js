@@ -15,17 +15,25 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     // else
     else {
         // telusuri seluruh kursi dari awal
-        for(let i = 0; i < penumpang.length; i++) {
+        let i = 0;
+        for(i; i < penumpang.length; i++) {
             if(penumpang[i] === undefined) {
                 penumpang[i] = namaPenumpang;
                 break;
             }
+            
         }
+
+        if(penumpang[i] !== namaPenumpang) {
+            penumpang[penumpang.length] = namaPenumpang; 
+        }
+
+        return penumpang;
 
         // let nomorPenumpangTerakhir = penumpang.length;
         // penumpang[nomorPenumpangTerakhir] = namaPenumpang;
         // break;
-        return penumpang;
+        
    
         
 
