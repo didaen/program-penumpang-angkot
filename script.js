@@ -22,10 +22,10 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
         let i = 0;
         for(i; i < penumpang.length; i++) {
 
-        //    Cek apakah orang yang mau naik namanya sama
-        //    if(penumpang[i] === namaPenumpang) {
-        //         return '$()'
-        //    }
+          // Cek apakah orang yang mau naik namanya sama
+           if(penumpang[i] === namaPenumpang) {
+                return namaPenumpang + " sudah naik angkot."
+           }
            
             // jika ada kursi kosong
             if(penumpang[i] === undefined) {
