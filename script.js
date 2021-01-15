@@ -1,4 +1,7 @@
-const penumpang = [];
+const penumpang = ["Dida", "Isna", "Fina"];
+console.log(penumpang);
+penumpang[1] = undefined;
+console.log(penumpang);
 const tambahPenumpang = (namaPenumpang, penumpang) => {
     // jika angkot kosong
     if (penumpang.length === 0) {
@@ -10,23 +13,29 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     }
 
     // else
+    else {
+        // telusuri seluruh kursi dari awal
+        for(let i = 0; i < penumpang.length; i++) {
+            if(penumpang[i] === undefined) {
+                penumpang[i] = namaPenumpang;
+                break;
+            }
+        }
 
-
-
-    // else if (penumpang.length !== 0) {
+        // let nomorPenumpangTerakhir = penumpang.length;
+        // penumpang[nomorPenumpangTerakhir] = namaPenumpang;
+        // break;
+        return penumpang;
+   
         
-    //     // telusuri seluruh kursi dari awal
-    //     const temukanUndefinedPertama = penumpang.find( (undifinedPertama) => {
-    //         return undifinedPertama === undefined;
-    //     });
-
-    //     return penumpang
 
         // jika ada kursi kosong
-    //             tambah penumpang di kursi tersebut
-    //             kembalikan isi array & keluar dari function
+        //         tambah penumpang di kursi tersebut
+        //         kembalikan isi array & keluar dari function
 
-    // }
+    }
+
+    
     //         jika sudah ada nama yang sama
     //             tampilkan pesan kesalahannya
     //             kembalikan isi array & keluar dari function
@@ -36,21 +45,21 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     
 }
 
-const cobaArray = [];
-cobaArray[0] = "Dida";
-cobaArray[1] = "Isna";
-cobaArray[2] = undefined;
-cobaArray[3] = undefined;
-console.log(cobaArray);
+// const cobaArray = [];
+// cobaArray[0] = "Dida";
+// cobaArray[1] = "Isna";
+// cobaArray[2] = undefined;
+// cobaArray[3] = undefined;
+// console.log(cobaArray);
 
-for(let i = 0; i < cobaArray.length; i++) {
-    if(cobaArray[i] === undefined) {
-        console.log(i);
-        break;
-    }
-}
+// for(let i = 0; i < cobaArray.length; i++) {
+//     if(cobaArray[i] === undefined) {
+//         console.log(i);
+//         break;
+//     }
+// }
 
 
-const greet = () => {
-    return "Hello, World";
-};
+// const greet = () => {
+//     return "Hello, World";
+// };
