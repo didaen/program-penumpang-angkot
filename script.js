@@ -1,8 +1,5 @@
 const penumpang = [];
-// const penumpang = ["Dida", "Isna", "Fina", "Fajar", "Tia"];
-// console.log(penumpang);
-// penumpang[1] = undefined;
-// penumpang[4] = undefined;
+
 console.log(penumpang);
 const tambahPenumpang = (namaPenumpang, penumpang) => {
     // jika angkot kosong
@@ -16,14 +13,25 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
 
     // else
     else {
+
+        const foundPenumpang = penumpang.find( (orang) => {
+            return orang === namaPenumpang;
+        } );
+    
+    
+        if(foundPenumpang) {
+            return namaPenumpang + " sudah naik angkot.";
+        } 
+
+
         // telusuri seluruh kursi dari awal
         let i = 0;
         for(i; i < penumpang.length; i++) {
 
           // Cek apakah orang yang mau naik namanya sama
-           if(penumpang[i] === namaPenumpang) {
-                return namaPenumpang + " sudah naik angkot."
-           }
+        //    if(penumpang[i] === namaPenumpang) {
+        //         return namaPenumpang + " sudah naik angkot."
+        //    }
            
             // jika ada kursi kosong
             if(penumpang[i] === undefined) {
