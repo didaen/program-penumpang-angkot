@@ -1,7 +1,8 @@
-const penumpang = ["Dida", "Isna", "Fina", "Fajar", "Tia"];
-console.log(penumpang);
-penumpang[1] = undefined;
-penumpang[4] = undefined;
+const penumpang = [];
+// const penumpang = ["Dida", "Isna", "Fina", "Fajar", "Tia"];
+// console.log(penumpang);
+// penumpang[1] = undefined;
+// penumpang[4] = undefined;
 console.log(penumpang);
 const tambahPenumpang = (namaPenumpang, penumpang) => {
     // jika angkot kosong
@@ -44,4 +45,21 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
 
     }
 
+}
+
+const hapusPenumpang = (namaPenumpang, penumpang) => {
+    if(penumpang.length === 0) {
+        console.log("Angkot sedang kosong");
+    }
+    
+//     let i = 0;
+//     for(i; i < penumpang.length; i++) {
+//         if(namaPenumpang === penumpang[i]) {
+//             penumpang[i] = undifined;
+//         }
+//         else {
+//             console.log(namaPenumpang + " tidak ada di angkot.");
+//         }
+//     }
+    return penumpang
 }
