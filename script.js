@@ -14,9 +14,19 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
 
     // else
     else {
+        
+
+
+
         // telusuri seluruh kursi dari awal
         let i = 0;
         for(i; i < penumpang.length; i++) {
+
+        //    Cek apakah orang yang mau naik namanya sama
+        //    if(penumpang[i] === namaPenumpang) {
+        //         return '$()'
+        //    }
+           
             // jika ada kursi kosong
             if(penumpang[i] === undefined) {
                 // tambah penumpang di kursi tersebut
@@ -26,15 +36,14 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
             
         }
 
-        // Jika tidak ada kursi yang kosong
+        // Jika tidak terdapat kursi kosong
         if(penumpang[i] !== namaPenumpang) {
-            // Tambahkan penumpang di kursi terakhir
+            // Penumpang di tempatkan di kursi paling akhir
             penumpang[penumpang.length] = namaPenumpang; 
         }
 
         // kembalikan isi array & keluar dari function
         return penumpang;
-        
 
     }
 
