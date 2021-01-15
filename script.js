@@ -17,29 +17,24 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
         // telusuri seluruh kursi dari awal
         let i = 0;
         for(i; i < penumpang.length; i++) {
+            // jika ada kursi kosong
             if(penumpang[i] === undefined) {
+                // tambah penumpang di kursi tersebut
                 penumpang[i] = namaPenumpang;
                 break;
             }
             
         }
 
+        // Jika tidak ada kursi yang kosong
         if(penumpang[i] !== namaPenumpang) {
+            // Tambahkan penumpang di kursi terakhir
             penumpang[penumpang.length] = namaPenumpang; 
         }
 
+        // kembalikan isi array & keluar dari function
         return penumpang;
-
-        // let nomorPenumpangTerakhir = penumpang.length;
-        // penumpang[nomorPenumpangTerakhir] = namaPenumpang;
-        // break;
         
-   
-        
-
-        // jika ada kursi kosong
-        //         tambah penumpang di kursi tersebut
-        //         kembalikan isi array & keluar dari function
 
     }
 
@@ -52,7 +47,6 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     //             kembalikan isi array & keluar dari function
     
 }
-
 // const cobaArray = [];
 // cobaArray[0] = "Dida";
 // cobaArray[1] = "Isna";
