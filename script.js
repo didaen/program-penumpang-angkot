@@ -1,5 +1,5 @@
-const penumpang = [];
-// const penumpang = ["Dida", "Isna", "Fina", "Fajar", "Tia"];
+// const penumpang = [];
+const penumpang = ["Dida", "Isna", "Fina", "Fajar", "Tia"];
 // console.log(penumpang);
 // penumpang[1] = undefined;
 // penumpang[4] = undefined;
@@ -52,14 +52,13 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
         console.log("Angkot sedang kosong");
     }
     
-//     let i = 0;
-//     for(i; i < penumpang.length; i++) {
-//         if(namaPenumpang === penumpang[i]) {
-//             penumpang[i] = undifined;
-//         }
-//         else {
-//             console.log(namaPenumpang + " tidak ada di angkot.");
-//         }
-//     }
+    for(let i = 0; i < penumpang.length; i++) {
+        if(penumpang[i] === namaPenumpang) {
+            penumpang[i] = undefined;
+        }
+        // else if(penumpang[i] !== namaPenumpang) {
+        //     console.log(namaPenumpang + " tidak ada di angkot.");
+        // }
+    }
     return penumpang
 }
