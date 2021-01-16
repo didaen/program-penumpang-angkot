@@ -21,6 +21,7 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     
         if(foundPenumpang) {
             console.log(namaPenumpang + " sudah naik angkot.");
+            return penumpang;
         } 
 
 
