@@ -20,7 +20,7 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
     
     
         if(foundPenumpang) {
-            return namaPenumpang + " sudah naik angkot.";
+            console.log(namaPenumpang + " sudah naik angkot.");
         } 
 
 
