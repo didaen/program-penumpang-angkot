@@ -8,7 +8,6 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
         penumpang[0] = namaPenumpang;
 
         //     kembalikan isi array & keluar dari function
-        return penumpang;
     }
 
     // else
@@ -49,11 +48,13 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
             penumpang[penumpang.length] = namaPenumpang; 
         }
 
-        // kembalikan isi array & keluar dari function
-        return penumpang;
+        
 
     }
 
+    
+    // kembalikan isi array & keluar dari function
+    return penumpang;
 }
 
 
@@ -62,6 +63,17 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
         console.log("Angkot sedang kosong");
     }
     else {
+        const foundPenumpang = penumpang.find( (orang) => {
+            return orang === namaPenumpang;
+        } );
+    
+    
+        if(foundPenumpang === undefined) {
+            console.log(namaPenumpang + " tidak ada di angkot.");
+            return penumpang;
+        } 
+
+
         let i = 0;
         for(i; i < penumpang.length; i++) {
             if(penumpang[i] === namaPenumpang) {
@@ -71,15 +83,8 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
         }
     
         
-        const foundPenumpang = penumpang.find( (orang) => {
-            return orang === namaPenumpang;
-        } );
-    
-    
-        if(foundPenumpang === undefined) {
-            console.log(namaPenumpang + " tidak ada di angkot.");
-        } 
+        
     }
     
-    return penumpang
+    return penumpang;
 }
