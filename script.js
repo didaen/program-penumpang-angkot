@@ -4,8 +4,13 @@ console.log(penumpang);
 // Function untuk menambah penumpang
 const tambahPenumpang = (namaPenumpang, penumpang) => {
 
+
+
+
+
+
     // jika angkot kosong
-    if (penumpang.length === 0) {
+    if (penumpang.length === 0 ) {
         // tambah penumpang di awal array
         penumpang[0] = namaPenumpang;
     }
@@ -55,13 +60,26 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
     // Jika di angkot belum ada penumpang
     if(penumpang.length === 0) {
         //Beri peringatan angkot kosong
-        console.log("Angkot sedang kosong");
+        console.log("Angkot sedang kosong.");
     }
 
     // else
     else {
 
-        // Telusuri apakah terdapat nama oran yang mau turun
+        // Periksa apakah masih ada penumpang di angkot
+        const semuaTurun = penumpang.filter( (orang) => {
+            return orang === undefined;
+        } );
+
+        // Jika panjang array dari found penumpang yg isinya undefine sama panjang dengan array penumpang
+        if(semuaTurun.length === penumpang.length) {
+            //Maka penumpang sudah turun semua
+            console.log("Angkot sedang kosong.")
+            // Mencetak penumpang supaya langsung keluar dari function
+            return penumpang;
+        }
+
+        // Telusuri apakah terdapat nama orang yang mau turun
         const foundPenumpang = penumpang.find( (orang) => {
             return orang === namaPenumpang;
         } );
@@ -70,7 +88,7 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
         if(foundPenumpang === undefined) {
             // Beri peringatan orang yg mau turun tidak ada di angkot
             console.log(namaPenumpang + " tidak ada di angkot.");
-            // Cetak penumpang
+            // Mencetak penumpang supaya langsung keluar dari function
             return penumpang;
         } 
 
@@ -89,3 +107,4 @@ const hapusPenumpang = (namaPenumpang, penumpang) => {
     // Mencetak penumpang
     return penumpang;
 }
+
