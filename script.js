@@ -1,45 +1,39 @@
 const penumpang = [];
-
 console.log(penumpang);
+
+// Function untuk menambah penumpang
 const tambahPenumpang = (namaPenumpang, penumpang) => {
+
     // jika angkot kosong
     if (penumpang.length === 0) {
-        //     tambah penumpang di awal array
+        // tambah penumpang di awal array
         penumpang[0] = namaPenumpang;
-
-        //     kembalikan isi array & keluar dari function
     }
 
     // else
     else {
 
+        //Cek apakah ada orang dengan nama yg sama di angkot
         const foundPenumpang = penumpang.find( (orang) => {
             return orang === namaPenumpang;
         } );
     
-    
+        // Jika ada nama yg sama beri peringatan
         if(foundPenumpang) {
             console.log(namaPenumpang + " sudah naik angkot.");
             return penumpang;
         } 
 
-
         // telusuri seluruh kursi dari awal
         let i = 0;
+        // Telusuri apakah di angkot terdapat kursi kosong
         for(i; i < penumpang.length; i++) {
-
-          // Cek apakah orang yang mau naik namanya sama
-        //    if(penumpang[i] === namaPenumpang) {
-        //         return namaPenumpang + " sudah naik angkot."
-        //    }
-           
             // jika ada kursi kosong
             if(penumpang[i] === undefined) {
                 // tambah penumpang di kursi tersebut
                 penumpang[i] = namaPenumpang;
                 break;
-            }
-            
+            } 
         }
 
         // Jika tidak terdapat kursi kosong
@@ -48,43 +42,50 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
             penumpang[penumpang.length] = namaPenumpang; 
         }
 
-        
-
     }
 
-    
     // kembalikan isi array & keluar dari function
     return penumpang;
 }
 
 
+// Function untuk menurunkan penumpang
 const hapusPenumpang = (namaPenumpang, penumpang) => {
+
+    // Jika di angkot belum ada penumpang
     if(penumpang.length === 0) {
+        //Beri peringatan angkot kosong
         console.log("Angkot sedang kosong");
     }
+
+    // else
     else {
+
+        // Telusuri apakah terdapat nama oran yang mau turun
         const foundPenumpang = penumpang.find( (orang) => {
             return orang === namaPenumpang;
         } );
     
-    
+        // Jika nama yang mau turun tidak ada yg sama dengan penumpang angkot
         if(foundPenumpang === undefined) {
+            // Beri peringatan orang yg mau turun tidak ada di angkot
             console.log(namaPenumpang + " tidak ada di angkot.");
+            // Cetak penumpang
             return penumpang;
         } 
 
-
         let i = 0;
+        // Telusuri apakah terdapat nama penumpang yg sama dengan nama yg ingin turun
         for(i; i < penumpang.length; i++) {
+            // Jika ada
             if(penumpang[i] === namaPenumpang) {
+                // Maka buat kursinya menjadi kosong atau undefined
                 penumpang[i] = undefined;
                 break;
             }
         }
-    
-        
-        
     }
-    
+
+    // Mencetak penumpang
     return penumpang;
 }
