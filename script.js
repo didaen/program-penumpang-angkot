@@ -4,11 +4,6 @@ console.log(penumpang);
 // Function untuk menambah penumpang
 const tambahPenumpang = (namaPenumpang, penumpang) => {
 
-
-
-
-
-
     // jika angkot kosong
     if (penumpang.length === 0 ) {
         // tambah penumpang di awal array
